@@ -24,12 +24,12 @@ export default Login = () => {
             <Text style={styles.title}>Login</Text>
             <TextInput
                 style={styles.input}
-                placeholder="Email"
+                placeholder="teste@gmail.com"
                 onChangeText={e => setFormValues({ email: e, ...formValues })}
                 value={formValues.email} />
             <TextInput
                 style={styles.input}
-                placeholder="Senha"
+                placeholder="Digite sua senha"
                 onChangeText={e => setFormValues({ password: e, ...formValues })}
                 value={formValues.password} />
 
@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     container: {
         display: "flex",
         flexDirection: "column",
+        alignItems: "center"
     },
 
     title: {
@@ -55,23 +56,25 @@ const styles = StyleSheet.create({
     input: {
         borderBlockColor: "#000",
         borderWidth: 1,
-        padding: 15,
+        padding: 7,
         width: 270,
-        marginBottom: 20
+        marginBottom: 20,
+        borderRadius: 30,
+        textAlign: "center"
     },
 
     button: {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: "#000",
-        height: 60,
-        color: "#000"
+        backgroundColor: "#64CFCA",
+        height: 50,
+        width: 210,
+        borderRadius: 30
     },
 
     text: {
         fontSize: 20,
-        color: "#fff"
+        color: "#000"
     }
-
 })
