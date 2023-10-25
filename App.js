@@ -1,19 +1,29 @@
-import { StyleSheet, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Login from './components/Login';
+import Profile from './components/Profile'
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App() {
   return (
-    <View style={styles.container}>
-      <Login />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+        <Stack.Screen name="Profile" component={Profile} options={headerStyle} />
+      </Stack.Navigator>
+    </NavigationContainer >
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const headerStyle = {
+  title: "Perfil",
+  headerStyle: {
+    backgroundColor: "#64CFCA",
+    paddingLeft: "100px"
   },
-});
+  headerTintColor: "#fff",
+  headerTitleAlign: "center",
+}
+
+export default App;
