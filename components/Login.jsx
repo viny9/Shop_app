@@ -2,8 +2,8 @@ import { useState } from "react"
 import { StyleSheet, Text, TextInput, View, TouchableOpacity, Image } from "react-native"
 
 const Login = props => {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [, setEmail] = useState('')
+    const [, setPassword] = useState('')
 
     return (
         <View style={styles.container}>
